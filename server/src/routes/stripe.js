@@ -3,6 +3,7 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 router.post("/api/create-checkout-session", async (req, res) => {
+  console.log(req.body);
   const { products } = req.body;
 
   const lineItems = products.map((product) => ({
