@@ -11,12 +11,13 @@ const PaymentForm = (props) => {
   // });
 
   const api = process.env.REACT_APP_BACKEND_URL;
+  const stripekey = process.env.REACT_APP_BACKEND_URL;
   const {option, price, qnty} = props;
   // console.log(typeof props);
   // console.log(props.price);
 
   const makePayment = async() => {
-    const stripe = await loadStripe("pk_live_51O581GSC4pjh2Cs8C7tRgiHMMqxl1j7hNkBNTj097pjwhpaqSv7cotaA6Tnj2l1r5Zc7FsJMviiKmV6H2bW4nc1b00kb5MEuuj")
+    const stripe = await loadStripe(`${stripekey}`)
 
     
     const body = {
