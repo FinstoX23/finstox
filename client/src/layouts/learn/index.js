@@ -1,5 +1,5 @@
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bgImage from "assets/images/bg-home.jpg";
 import MKBox from "components/MKBox";
 import Box from "@mui/material/Box";
@@ -16,6 +16,7 @@ import { TableRow } from "@mui/material";
 //import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import { useMaterialUIController } from "context";
 
 //import LockIcon from "@mui/icons-material/Lock";
 
@@ -97,7 +98,10 @@ const rows = [
 function LearnDashboard() {
   // Create an array to store the open/close state of each row
   const [openRows, setOpenRows] = useState(Array(rows.length).fill(false));
-
+  const [controller, dispatch] = useMaterialUIController();
+  //const navigate = useNavigate(); // Initialize the navigate function
+  //const [dashboardData, setDashboardData] = useState(null);
+  const {darkMode} = controller;
   // for framer motion
   const [selectedId, setSelectedId] = useState(null);
 
@@ -155,7 +159,7 @@ function LearnDashboard() {
       </MKBox> */}
 
       <div style={{ paddingTop: "20px" }}>
-        <h4 className="lg:text-3xl font-bold">Courses</h4>
+        <h4 className={`lg:text-3xl font-bold ${darkMode ? "text-white":""} mb-10`}>Courses</h4>
       </div>
 
       <TableContainer component={Paper}>
@@ -173,7 +177,7 @@ function LearnDashboard() {
                       {openRows[index] ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                     </IconButton>
                   </TableCell>
-                  <TableCell className="bg-slate-300" component="th" scope="row">
+                  <TableCell className="bg-slate-300" component="th" scope="row" onClick={()=>{toggleRow(index)}}>
                     <div className="flex flex-row justify-between">
                       <h2 className="lg:text-xl font-medium">
                         {" "}
