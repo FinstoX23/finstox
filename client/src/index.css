@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face{
+    font-family: "space-crusader";
+    src: url("../public/space-crus.ttf") format("truetype");
+}
+
+.space-crus-italic {
+    font-family: "space-crusader";
+}
+
+html{
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: none;
+}
+
+.bg-chart-image {
+    background-image: url("../public/chart.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -3,7 +3,7 @@
       "browser": true,
       "es2021": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -13,12 +13,6 @@
     },
     "plugins": ["react", "prettier"],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto"
-        }
-      ],
       "react/react-in-jsx-scope": "off",
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/jsx-props-no-spreading": [
@@ -30,7 +24,10 @@
       "react/jsx-curly-spacing": [2, "never"],
       "default-param-last": "off",
       "react/display-name": "off",
-      "react/no-unescaped-entities": "off" 
+      "react/no-unescaped-entities": "off" ,
+      "react/no-unknown-property":"off",
+      "no-unused-vars":"off",
+      "react/prop-types":"off"
     },
     "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
   }

@@ -36,7 +36,7 @@ export default function HeroSection() {
             <h2 className="text-3xl font-bold leadi sm:text-6xl lg:w-[80rem]">
               Where Learning{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">
-                Meets Funding for Irresistible
+                Meets Funding for Irresstible
               </span>
               <br />
             </h2>
