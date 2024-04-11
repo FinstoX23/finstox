@@ -11,9 +11,6 @@
     font-family: "space-crusader";
 }
 
-html{
-    overflow-x:hidden;
-}
 
 ::-webkit-scrollbar {
     width: 10px;
